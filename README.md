@@ -1,6 +1,6 @@
 # Conjur Python2 API Client
 
-A Python2 client for the Conjur API.
+A Python2 client for the Conjur API, with extremely minimal support for python3 for get and setting variables.
 
 **If you are looking for Python3 API client, please go to our new project page at https://github.com/cyberark/conjur-api-python3.**
 
@@ -8,7 +8,7 @@ A Python2 client for the Conjur API.
 
 ## Installation
 
-This Conjur Python2 API requires Python 2.7.  
+This Conjur Python2 API requires Python 2.7.
 
 Install from [PyPI](https://pypi.python.org/pypi/Conjur)
 
@@ -194,14 +194,14 @@ Run tests and linting with:
 ### PyPi
 
 To publish to PyPi, you will need to convert this document to restructured
-text using pandoc: 
+text using pandoc:
 
 ```
 pandoc --from=markdown --to=rst --output=README.rst README.md
 ```
 
 Furthermore, you will likely need to have the `pypandoc` package installed
-for the markup to appear correctly on the PyPi site.  
+for the markup to appear correctly on the PyPi site.
 
 ## License
 

@@ -19,18 +19,19 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import os
 
-from config import Config
-from api import API
-from group import Group
-from user import User
-from host import Host
-from layer import Layer
-from resource import Resource
-from role import Role
-from variable import Variable
-from exceptions import ConjurException
+from .config import Config
+from .api import API
+from .group import Group
+from .user import User
+from .host import Host
+from .layer import Layer
+from .resource import Resource
+from .role import Role
+from .variable import Variable
+from .exceptions import ConjurException
 
-from config import config
+from .config import config
+
 
 def _config(given):
     if given is None:
@@ -113,6 +114,7 @@ def new_from_token(token, configuration=None):
     instance (`conjur.config`) will be used.
     """
     return API(token=token, config=_config(configuration))
+
 
 __all__ = (
     'config', 'Config', 'Group', 'API', 'User', 'Host', 'Layer', 'Resource', 'Role', 'Variable',

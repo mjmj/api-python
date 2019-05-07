@@ -32,6 +32,7 @@ from conjur.resource import Resource
 from conjur.util import urlescape
 from conjur.exceptions import ConjurException
 
+
 class API(object):
     def __init__(self, credentials=None, token=None, config=None):
         """
@@ -98,8 +99,8 @@ class API(object):
         Returns a string suitable for use as an `Authorization` header value.
         """
         token = self.authenticate()
-        enc = base64.b64encode(token)
-        return 'Token token="%s"' % enc
+        enc = base64.b64encode(token.encode())
+        return 'Token token="{}"'.format(enc.decode("utf-8"))
 
     def request(self, method, url, **kwargs):
         """
@@ -166,7 +167,7 @@ class API(object):
         """
         return self.request('post', url, **kwargs)
 
-    def put(self,url, **kwargs):
+    def put(self, url, **kwargs):
         """
         **NOTE** You will generally not need to use this method directly.
 
